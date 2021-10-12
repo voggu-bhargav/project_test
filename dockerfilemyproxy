@@ -1,6 +1,0 @@
-FROM nginx
-MAINTAINER voggu "voggu.bhargav@gmail.com"
-#RUN rm /etc/nginx/conf.d/*
-#COPY nginx.conf /etc/nginx/conf.d/
-
-EXPOSE 80
