@@ -1,0 +1,30 @@
+#docker compose file
+
+version: "3.9"
+
+services:
+    myflasking:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: myflask
+        ports:
+          - "5000:5000"
+        #networks:
+         #   - app-network
+            
+    myproxying:
+        #build: 
+         #  context: .
+          #  dockerfile: dockerfilemyproxy
+        image: "nginx"
+        container_name: myproxy
+        volumes:
+            - ./docker_proxy/:/etc/nginx/conf.d/
+        ports:
+            - "80:80"
+            - "443:443"
+        #links:
+         #  - "myflask:myproxy"
+        #depends_on:
+         #   - myflask
