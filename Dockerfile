@@ -16,5 +16,5 @@ RUN python3 -m pip install -r requirements.txt
 
 #EXPOSE 5000
 
-CMD "echo" "Now running the script"
 CMD "./run_app_dev.sh"
+CMD ["flask", "run", "--host", "0.0.0.0"]

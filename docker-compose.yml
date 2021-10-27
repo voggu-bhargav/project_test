@@ -9,7 +9,7 @@ services:
             dockerfile: Dockerfile
         container_name: myflask
         ports:
-          - "5000:5000"
+          - "5000:80"
         #networks:
          #   - app-network
             
@@ -23,7 +23,7 @@ services:
             - ./docker_proxy/:/etc/nginx/conf.d/
         ports:
             - "80:80"
-            - "443:443"
+      #      - "443:443"
         #links:
          #  - "myflask:myproxy"
         #depends_on:
