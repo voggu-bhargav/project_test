@@ -4,7 +4,7 @@ pipeline {
         stage('run docker compose') {
             steps {
                 sh 'docker-compose up -d'
-                sh  """
+                sh  '''
                         RETRIES=10
                         for i in $(seq 1 $RETRIES);
                         do
@@ -17,7 +17,7 @@ pipeline {
                                 sleep 30
                             fi
                         done
-                """
+                '''
                 sh 'docker-compose down'
             }
         }
