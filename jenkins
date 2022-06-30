@@ -19,13 +19,9 @@ pipeline {
                         done
                 '''
                 sh 'docker compose down'
-                sh 'docker rmi project_test_myflask nginx docker_test_gitpull_myflask -f'
+                sh 'docker rmi nginx project_test/myflask -f'
             }
         }
     }
-    post {
-        always {
-            cleanWs()
-        }
-    }
+
 }
