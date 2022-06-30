@@ -18,7 +18,7 @@ pipeline {
                         fi
                      done
                     """
-                sh 'docker-compose down'
+                  sh 'docker-compose down'
             }
         }
     }
