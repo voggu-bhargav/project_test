@@ -3,7 +3,7 @@
 version: "3.9"
 
 services:
-    myflasking:
+    myflask:
         build:
             context: .
             dockerfile: Dockerfile
@@ -22,8 +22,8 @@ services:
         volumes:
             - ./docker_proxy/:/etc/nginx/conf.d/
         ports:
-            - "5000:8082"
-      #      - "443:443"
+            - "80:80"
+            - "443:443"
         #links:
          #  - "myflask:myproxy"
         #depends_on:
