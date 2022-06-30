@@ -19,7 +19,7 @@ pipeline {
                         done
                 '''
                 sh 'docker-compose down'
-                sh 'docker rmi project_test_myflask nginx'
+                sh 'docker rmi project_test_myflask nginx docker_test_gitpull_myflask'
             }
         }
     }
