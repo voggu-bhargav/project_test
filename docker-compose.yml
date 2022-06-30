@@ -4,9 +4,10 @@ version: "3.9"
 
 services:
     myflask:
-        build:
+        build: 
             context: .
             dockerfile: Dockerfile
+        image: project_test/myflask
         container_name: myflask
         ports:
           - "5000"
@@ -17,7 +18,7 @@ services:
         #build: 
          #  context: .
           #  dockerfile: dockerfilemyproxy
-        image: "nginx"
+        image: nginx
         container_name: myproxy
         volumes:
             - ./docker_proxy/:/etc/nginx/conf.d/
