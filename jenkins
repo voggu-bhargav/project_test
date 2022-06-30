@@ -1,6 +1,5 @@
 pipeline {
-    agent { docker-compose.yml  true
-        }
+    agent { docker-compose.yml }
     stages {
         stage('test') {
             steps {
