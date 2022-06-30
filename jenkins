@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('run docker compose') {
             steps {
+                sh 'docker-compose build'
                 sh 'docker-compose up -d'
                 sh  '''
                         RETRIES=10
