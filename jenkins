@@ -10,16 +10,16 @@ pipeline {
                         do
                             echo "retry n. $i"
                             if curl -s --head  --request GET http://localhost/api/docs/#/ | grep "200 OK" > /dev/null; then 
-                                echo "mysite.com is UP"
+                                echo "my flask is UP and working"
                                 break
                             else
-                                echo "mysite.com is DOWN"
+                                echo "my flask is DOWN"
                                 sleep 30
                             fi
                         done
                 '''
-                sh 'docker-compose down'
-                sh 'docker rmi project_test_myflask nginx docker_test_gitpull_myflask'
+                sh 'docker compose down'
+                sh 'docker rmi project_test_myflask nginx docker_test_gitpull_myflask -f'
             }
         }
     }
