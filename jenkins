@@ -19,8 +19,8 @@ pipeline {
                             fi
                         done
                 '''
-                sh 'docker compose down'
-                sh 'docker rmi nginx project_test/myflask -f'
+                sh 'docker compose down --rmi'
+               
             }
         }
     }
